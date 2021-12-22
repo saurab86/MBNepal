@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "213384777089",
+    "project_id": "mbnepal-2b020",
+    "storage_bucket": "mbnepal-2b020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213384777089:android:5bfa61b40bb7e4d699ac80",
+        "android_client_info": {
+          "package_name": "com.example.mbnepal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213384777089-b5erl5gk1vc5mmqaf67gl8ad5r8irm2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mbnepal",
+            "certificate_hash": "35cbf7a3f2bdcff8aebe75e0ed2ff50d10f8a3f7"
+          }
+        },
+        {
+          "client_id": "213384777089-bidfcbltue651smpohdvq6cjg6mb7jq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhBgbXQHoL0v0nE7T3nq6M0wxtIy49fio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213384777089-bidfcbltue651smpohdvq6cjg6mb7jq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

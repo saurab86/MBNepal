@@ -25,6 +25,7 @@ dependencies:
   modal_bottom_sheet:
   blurry:
   font_awesome_flutter:
+  sqflite:
 
 dev_dependencies:
   flutter_test:

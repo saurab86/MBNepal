@@ -26,6 +26,7 @@ dependencies:
   blurry:
   font_awesome_flutter:
   sqflite:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

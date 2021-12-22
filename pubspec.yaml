@@ -24,6 +24,7 @@ dependencies:
   shared_preferences:
   modal_bottom_sheet:
   blurry:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:

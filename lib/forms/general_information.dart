@@ -57,27 +57,30 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
           title: Text("General Information",style: TextStyle(fontFamily: 'RaleWay',fontSize: 25)),
         ),
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Form(child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
+              //Appraisal Number
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 35),
               child: Text('Appraisal Number :',style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1)))),
-              
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Text('00000200000122122021000002',style: TextStyle(fontFamily: 'Raleway',fontSize: 17,fontWeight: FontWeight.w500))),
               
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Divider(thickness: 1,),),
-              
+
+              //CO Name
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Text('CO Name :',style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1)))),
-
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Text('Test User',style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.w500,))),
               
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Divider(thickness: 1,),),
 
+              // Client's Name
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Row(
                 children: [
@@ -85,7 +88,6 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
                   Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
                 ],
               )),
-
                Padding(padding: EdgeInsets.only(left: 23,right: 23,),
                child: TextFormField(autocorrect: true,
                autofocus: false,
@@ -98,9 +100,9 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
                  ),
                ),),  
 
+              //NRC Number
               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Text('NRC No. :',style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1)))), 
-
               Padding(padding: EdgeInsets.only(left: 23,right: 23,),
                child: TextFormField(autocorrect: true,
                autofocus: false,
@@ -113,14 +115,14 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
                  ),
                ),), 
 
-                 Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              // Maritail Status
+              Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
               child: Row(
                 children: [
                   Text("Marital Status :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
                   Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
                 ],
               )),   
-
                Padding(padding: EdgeInsets.only(left: 23,right: 23,),
                child: TextFormField(autocorrect: true,
                autofocus: false,
@@ -132,7 +134,150 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
                      borderSide: BorderSide(color: Colors.black)
                    )
                  ),
-               ),),         
+               ),),   
+
+              // Contact Number
+              Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row(
+                children: [
+                  Text("Mobile Number :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )), 
+              Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+               keyboardType: TextInputType.phone,
+                 decoration: InputDecoration(
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: '+977-',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),), 
+
+          //Loan Purpose
+          Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row( children: [
+                  Text("Loan Purpose :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )),   
+               Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+                 decoration: InputDecoration(
+                   suffixIcon: IconButton(icon: FaIcon(FontAwesomeIcons.arrowAltCircleDown), onPressed: (){}),
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: 'Select Loan Purpose',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),), 
+
+          //Product Code
+          Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row( children: [
+                  Text("Product Code :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )),   
+               Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+                 decoration: InputDecoration(
+                   suffixIcon: IconButton(icon: FaIcon(FontAwesomeIcons.arrowAltCircleDown), onPressed: (){}),
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: 'Select Product Code',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),),     
+
+          //Sub Product Code
+          Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row( children: [
+                  Text("Sub Product Code :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )),   
+               Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+                 decoration: InputDecoration(
+                   suffixIcon: IconButton(icon: FaIcon(FontAwesomeIcons.arrowAltCircleDown), onPressed: (){}),
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: 'Select Sub Product Code',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),),  
+
+            //Requested Loan Amount
+            Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row(
+                children: [
+                  Text("Requested Loan Amount :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )), 
+              Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+               keyboardType: TextInputType.number,
+                 decoration: InputDecoration(
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: 'Enter Loan Amount',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),), 
+               
+              //Re-Payment Frequency
+               Padding(padding: EdgeInsets.only(left: 23,right: 23,top: 8),
+              child: Row( children: [
+                  Text("Re-Payment Frequency :",style: TextStyle(fontFamily: 'Raleway',fontSize: 16,fontWeight: FontWeight.w500,color: Color.fromRGBO(9, 44, 76, 1))),
+                  Text("*",style: TextStyle(color: Colors.red,fontSize: 30),)
+                ],
+              )),   
+               Padding(padding: EdgeInsets.only(left: 23,right: 23,),
+               child: TextFormField(autocorrect: true,
+               autofocus: false,
+                 decoration: InputDecoration(
+                   suffixIcon: IconButton(icon: FaIcon(FontAwesomeIcons.arrowAltCircleDown), onPressed: (){}),
+                   contentPadding: new EdgeInsets.symmetric(vertical: 12.0, horizontal: 10),
+                   hintText: 'Select Sub Product Code',
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Colors.black)
+                   )
+                 ),
+               ),), 
+            SizedBox(height:10 ,),
+
+          //Next and Reset button 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(
+                height: 45,width: 120,
+                child: ElevatedButton(onPressed: (){}, child: Text("Reset",style: TextStyle(fontSize: 20),),
+                style: ElevatedButton.styleFrom(primary: Color.fromRGBO(9, 44, 76, 1)),
+                )),
+
+                SizedBox(
+                height: 45,width: 120,
+                child: ElevatedButton(onPressed: (){}, child: Text("Next",style: TextStyle(fontSize: 20,color: Color.fromRGBO(9, 44, 76, 1)),),
+                style: ElevatedButton.styleFrom(primary: Color.fromRGBO(253, 253, 253, 1),side: BorderSide(color: Colors.red, width: 2),),
+                ))
+            ],
+          ),
+          SizedBox(height: 20,),
+      
             ],
           )),
         ),

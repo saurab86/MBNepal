@@ -85,7 +85,7 @@ class _BodyState extends State<Body> {
                                      child: Center(
                                        child: Column(
                                          children: [
-                                           Text("Could'nt Signin. Please try again later.")
+                                           Text("Could not SignIn. Please try again later.")
                                          ],
                                        ),
                                      ),

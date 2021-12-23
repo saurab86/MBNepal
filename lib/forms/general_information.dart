@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blurry/blurry.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mbnepal/dbhelper.dart';
 import 'package:mbnepal/screens/home.dart';
 
 
@@ -21,12 +22,29 @@ class GeneralInformation extends CupertinoPageRoute {
 }
 
 class GeneralInformationForm extends StatefulWidget {
-
+  
   @override
   _GeneralInformationFormState createState() => _GeneralInformationFormState();
 }
 
 class _GeneralInformationFormState extends State<GeneralInformationForm> {
+  final dbhelper = DataBaseHelper.instance;
+   
+   void insertdata() async{
+     Map<String,dynamic> row = {
+       DataBaseHelper.columnName:'Saurav',
+       DataBaseHelper.columnage:'22'
+     };
+     final id = await dbhelper.insert(row);
+     print(id);
+   }
+  
+  void queryall() async{
+    var allrows = await dbhelper.queryallrow();
+    allrows.forEach((row) {print(row); });
+  }
+ 
+
 
   Future<bool> _onBackpressed(){
     return backpressed();
@@ -265,13 +283,14 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
             children: [
               SizedBox(
                 height: 45,width: 120,
-                child: ElevatedButton(onPressed: (){}, child: Text("Reset",style: TextStyle(fontSize: 20),),
+                child: ElevatedButton(onPressed: queryall, child: Text("Reset",style: TextStyle(fontSize: 20),),
                 style: ElevatedButton.styleFrom(primary: Color.fromRGBO(9, 44, 76, 1)),
                 )),
 
                 SizedBox(
                 height: 45,width: 120,
-                child: ElevatedButton(onPressed: (){}, child: Text("Next",style: TextStyle(fontSize: 20,color: Color.fromRGBO(9, 44, 76, 1)),),
+                child: ElevatedButton(onPressed:insertdata,
+                 child: Text("Next",style: TextStyle(fontSize: 20,color: Color.fromRGBO(9, 44, 76, 1)),),
                 style: ElevatedButton.styleFrom(primary: Color.fromRGBO(253, 253, 253, 1),side: BorderSide(color: Colors.red, width: 2),),
                 ))
             ],

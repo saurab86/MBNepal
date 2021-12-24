@@ -45,7 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("This device us not registered. Please register this device using a valid liscense in the MBWin System. Please use the IMEINumber of this device to register. IMEI Number of this device is 35851408071151",
+                child: Text("This device us not registered. Please register this device using a valid license in the MBWin System. Please use the IMEINumber of this device to register. IMEI Number of this device is 35851408071151",
                 style: TextStyle(fontSize: 18,fontFamily: 'Raleway',fontWeight: FontWeight.bold),),
               ),SizedBox(height:25),
       

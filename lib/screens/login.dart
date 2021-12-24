@@ -20,6 +20,7 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
+          
         ),
         body: SafeArea(child: Body()),
       ),

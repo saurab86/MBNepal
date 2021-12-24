@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blurry/blurry.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mbnepal/dbhelper.dart';
 import 'package:mbnepal/screens/home.dart';
@@ -70,6 +71,9 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
       onWillPop: _onBackpressed,
       child: Scaffold(
         appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          ),
           brightness: Brightness.light,
           backgroundColor: Color.fromRGBO(13, 54, 146,1),
           leading: IconButton(icon: Icon(Icons.arrow_back_ios_sharp), onPressed: (){

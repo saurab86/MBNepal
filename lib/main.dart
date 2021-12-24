@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mbnepal/screens/login.dart';
+import 'package:mbnepal/screens/welcome.dart';
 
 String idToken;
 
@@ -25,7 +25,7 @@ class MbNepalApp extends StatelessWidget {
     return MaterialApp(
       title: 'MB Nepal',
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: WelcomeScreen(),
        theme: ThemeData(
         appBarTheme: AppBarTheme(
           brightness: Brightness.dark,

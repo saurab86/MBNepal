@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mbnepal/forms/general_information.dart';
-import 'package:mbnepal/screens/welcome.dart';
 class HomePage extends StatefulWidget {
   final  userDetails;
   const HomePage({this.userDetails});
@@ -63,9 +62,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=>WelcomeScreen()));
-              }, child: Text("TextButton"))
             ],
           ),
         ),

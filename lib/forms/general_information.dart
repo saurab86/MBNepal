@@ -70,6 +70,7 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
       onWillPop: _onBackpressed,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(13, 54, 146,1),
           leading: IconButton(icon: Icon(Icons.arrow_back_ios_sharp), onPressed: (){
           Blurry.info(title: "Alert", 
           description: 'Are you sure you want to go back to home? Going back will not save your data in this page',

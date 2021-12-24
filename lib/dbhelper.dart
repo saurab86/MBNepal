@@ -7,7 +7,7 @@ class DataBaseHelper{
  static final _databaseversion = 1;
 
   static final table = "my_table";
-//  static final table1= "CADetails";
+ static final table1= "CADetails";
 //  static final table2 = "CADevices";
 //  static final table3 = "CALookup";
 //  static final table4 = "CAMaster";
@@ -22,7 +22,7 @@ class DataBaseHelper{
  static Database _database;
 
  //table 1 column names
-//  static final columnApprisalId = 'AppraisalId';
+ static final columnApprisalId = 'AppraisalId';
 //  static final columnCode = 'Code';
 //  static final columnDescription = 'Description';
 //  static final columnRemarks = 'Remarks';
@@ -55,6 +55,9 @@ Future _onCreate(Database db, int version) async{
     $columnage INTEGER NOT NULL
   )
   ''');
+  await db.execute('''CREATE TABLE $table1 (
+    $columnApprisalId INTEGER NOT NULL
+  )''');
 
   //await db.execute(''' CREATE TABLE $table1($columnApprisalId INTEGER PRIMARY KEY, $columnCode INTEGER PRIMARY KEY,
       //        $columnDescription TEXT NOT NULL, $columnRemarks TEXT)''');
@@ -65,10 +68,10 @@ Future _onCreate(Database db, int version) async{
 // Functions to insert ,query, update and delete
 Future<int>insert(Map<String,dynamic>row) async{
   Database db = await instance.databse;
-  return await db.insert(table, row);
+  return   await db.insert(table, row);
 }
 
-// Query all rows
+ // Query all rows
 Future<List<Map<String,dynamic>>> queryallrow() async{
   Database db = await instance.databse;
   return await db.query(table);

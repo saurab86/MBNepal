@@ -6,8 +6,12 @@ String idToken;
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    // systemNavigationBarColor: Colors.blue, // navigation bar color
-    statusBarColor: Colors.white60, // status bar color
+     systemNavigationBarColor: Colors.blue, // navigation bar color
+    statusBarColor:  Color.fromRGBO(13, 54, 146,1),
+    statusBarBrightness: Brightness.light,
+    statusBarIconBrightness: Brightness.dark
+
+     // status bar color
   ));
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +26,11 @@ class MbNepalApp extends StatelessWidget {
       title: 'MB Nepal',
       debugShowCheckedModeBanner: false,
       home: Login(),
-      theme: Theme.of(context).copyWith(appBarTheme: Theme.of(context).appBarTheme.copyWith(brightness: Brightness.light))
+       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.dark,
+        ),
+      ),
       // ThemeData(fontFamily: "RaleWay"),
 
     );

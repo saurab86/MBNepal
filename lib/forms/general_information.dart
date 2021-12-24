@@ -37,7 +37,7 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
    void insertdata() async{
      Map<String,dynamic> row = {
        DataBaseHelper.columnName:'Saurav',
-       DataBaseHelper.columnage:'22'
+       DataBaseHelper.columnage:'22',
      };
      final id = await dbhelper.insert(row);
      print(id);
@@ -70,6 +70,7 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
       onWillPop: _onBackpressed,
       child: Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           backgroundColor: Color.fromRGBO(13, 54, 146,1),
           leading: IconButton(icon: Icon(Icons.arrow_back_ios_sharp), onPressed: (){
           Blurry.info(title: "Alert", 

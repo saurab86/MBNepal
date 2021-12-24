@@ -97,8 +97,8 @@ class _BodyState extends State<Body> {
                         child: SizedBox(height: 40,
                         width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(onPressed: (){
-                          if(_pinCOntroller.text == null){
-                            Blurry.error(title: 'Alert', description: 'Please Enter Pin', confirmButtonText: 'Okay', onConfirmButtonPressed: ()=>Navigator.pop(context));
+                          if(_pinCOntroller.text.isEmpty){
+                            Blurry.error(title: 'Alert', description: 'Please Enter Pin', confirmButtonText: 'Okay', onConfirmButtonPressed: ()=>Navigator.pop(context)).show(context);
                           }else{
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>HomePage()));
                           }

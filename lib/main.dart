@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mbnepal/screens/login.dart';
 
 String idToken;
 
-void main(){
-   WidgetsFlutterBinding.ensureInitialized();
-   WidgetsFlutterBinding.ensureInitialized();
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    // systemNavigationBarColor: Colors.blue, // navigation bar color
+    statusBarColor: Colors.white60, // status bar color
+  ));
+
+  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MbNepalApp());
 }
 
@@ -16,7 +22,9 @@ class MbNepalApp extends StatelessWidget {
       title: 'MB Nepal',
       debugShowCheckedModeBanner: false,
       home: Login(),
-      theme: ThemeData(fontFamily: "RaleWay"),
+      theme: Theme.of(context).copyWith(appBarTheme: Theme.of(context).appBarTheme.copyWith(brightness: Brightness.light))
+      // ThemeData(fontFamily: "RaleWay"),
+
     );
   }
 }

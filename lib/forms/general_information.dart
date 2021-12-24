@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blurry/blurry.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mbnepal/dbhelper.dart';
 import 'package:mbnepal/screens/home.dart';
+import 'package:path_provider/path_provider.dart';
 
 
 class GeneralInformation extends CupertinoPageRoute {
@@ -28,7 +31,8 @@ class GeneralInformationForm extends StatefulWidget {
 }
 
 class _GeneralInformationFormState extends State<GeneralInformationForm> {
-  final dbhelper = DataBaseHelper.instance;
+  final dbhelper = DataBaseHelper.instance;  
+  String path;
    
    void insertdata() async{
      Map<String,dynamic> row = {
@@ -40,10 +44,13 @@ class _GeneralInformationFormState extends State<GeneralInformationForm> {
    }
   
   void queryall() async{
+    Directory documentdirectory = await getExternalStorageDirectory();
     var allrows = await dbhelper.queryallrow();
     allrows.forEach((row) {print(row); });
+    print(documentdirectory);
+    
   }
- 
+
 
 
   Future<bool> _onBackpressed(){

@@ -1,6 +1,5 @@
 import 'package:blurry/blurry.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mbnepal/forms/general_information.dart';
@@ -31,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+
     // ignore: unused_local_variable
     final Map<String, String> userDetails = widget.userDetails;
 
@@ -38,7 +38,10 @@ class _HomePageState extends State<HomePage> {
       onWillPop: _onBackPressed,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.teal,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          ),
+          backgroundColor: Color.fromRGBO(13, 54, 146,1),
           centerTitle: true,
           // title: Text(userDetails.toString()),
           leading: IconButton(icon: Icon(Icons.menu),onPressed: (){},),
@@ -50,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 return {'Logout', 'Export', 'Change PIN'}.map((String choice) {
                   return PopupMenuItem<String>(
                     value: choice,
-                    child: Text(choice),
+                    child: Text(choice,style: TextStyle(fontFamily: 'Raleway')),
                   );
                 }).toList();
               })],
@@ -66,7 +69,7 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: FloatingActionButton(onPressed: (){
           Navigator.of(context).push(GeneralInformation());
         },
-        backgroundColor: Colors.teal,
+        backgroundColor: Color.fromRGBO(13, 54, 146,1),
         tooltip: "You have clicked",
         child: Icon(Icons.add),), 
       ),

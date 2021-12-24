@@ -27,6 +27,7 @@ dependencies:
   font_awesome_flutter:
   sqflite:
   path_provider:
+  flutter_statusbarcolor:
 
 dev_dependencies:
   flutter_test:

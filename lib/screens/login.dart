@@ -99,8 +99,13 @@ class _BodyState extends State<Body> {
                         child: ElevatedButton(onPressed: (){
                           if(_pinCOntroller.text.isEmpty){
                             Blurry.error(title: 'Alert', description: 'Please Enter Pin', confirmButtonText: 'Okay', onConfirmButtonPressed: ()=>Navigator.pop(context)).show(context);
-                          }else{
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>HomePage()));
+                          }
+                          else{
+                            if(_pinCOntroller.text=='0000'){
+                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>HomePage()));
+                          }
+                           else Blurry.error(title: 'Wrong Pin', description: 'Please Enter Correct Pin', confirmButtonText: 'Okay', onConfirmButtonPressed: ()=>Navigator.pop(context)).show(context);
+                           
                           }
                         }, child: Text('LOGIN',style: TextStyle(fontFamily: 'Raleway',fontSize: 18),),
                         style: ElevatedButton.styleFrom(primary: Color.fromRGBO(13,54,146,1)))),

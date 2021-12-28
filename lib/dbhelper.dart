@@ -44,6 +44,7 @@ _initDatabase() async{
   Directory documentdirectory = await getExternalStorageDirectory();
   String path = join(documentdirectory.path,_databasename);
   return await openDatabase(path,version: _databaseversion,onCreate: _onCreate);
+
 }
 
 Future _onCreate(Database db, int version) async{
@@ -78,9 +79,37 @@ Future<List<Map<String,dynamic>>> queryallrow() async{
 }
 
 // Query Specfic 
- Future<List<Map<String,dynamic>>> querySpecific() async{
+ Future<List<Map<String,dynamic>>> querySpecific(int id) async{
    Database db = await instance.databse;
-   return await db.query(table,where: "age>20");
+   var res = await db.query(table,where: "id<3");
+    return res;
+  //  RAW QUERY****
+  // var result = await db.rawQuery('SELECT * FROM my_table WHERE id<3');
+  // var result = await db.rawQuery('SELECT * FROM my_table WHERE id?',[id]);
+  // return result;
+ 
  }
  
-}
+ //Delete data
+ Future<int>deletedata(int id) async{
+ Database db = await instance.databse;
+ var res = await db.delete(table,where: "id=?",whereArgs: [id]);
+ return res;
+ }
+
+//Update data
+
+ Future<int>update(int id) async{
+   Database db = await instance.databse;
+   var res = await db.update(table, {"name":"Sagar","age":"24"},where: 'id=?',whereArgs: [id]);
+   return res; 
+ }  
+
+ Future<List<Map<String,dynamic>>>selectoption() async{
+   Database db = await instance.databse;
+   var res = await db.rawQuery('SELECT name FROM my_table ORDER BY name;');
+   
+   return res;
+
+ }
+ }
